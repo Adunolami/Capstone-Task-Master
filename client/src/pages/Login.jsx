@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+import Textbox from '../components/Textbox';
+import Button from '../components/Button';
+import { useSelector } from 'react-redux';
 
 const Login = () => {
-  const user =''
+  const {user} = useSelector((state) => state.auth);
   const {
     register,
     handleSubmit,
@@ -13,6 +16,9 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const submitHandler = async (data) => {
+    console.log("submit")
+  };
 
   useEffect(() => {
     user && navigate('/dashboard')  //if user exist we navigate to dashboard
@@ -36,9 +42,58 @@ const Login = () => {
         <div className='cell'>
           <div className='circle rotate-in-up-left'></div>
         </div>
+         </div>
+       </div>
+       <div className="w-full md:w-1/3 lg:w-1/2 p-4 md:p-1 flex flex-col justify-center items-center">
+       <form 
+       onSubmit={handleSubmit(submitHandler)}
+       className='form-container w-full md:w-[300px} flex flex-col gap-4 bg-white px-10 pt-14 pb-14'
+       >
+    <div className=''>
+      <p className='text-teal-800 text-3xl font-bold text-center'>
+        Welcome Back
+        </p>
+        <p className='text-center text-base text-grey-700'>
+          Keep All Your Credentials Safe
+          </p>
+      
+    </div>
+    <div className='flex flex-col gap-y-5'>
+      <Textbox 
+      placeholder='email@example.com'
+      type='email'
+      name='email'
+      label= 'Email Address'
+      className='w-full rounded-full'
+      register={register('email', {
+      required:'email address is required'
+      })}
+      error={errors.email ? errors.email.message : ""} //if error exist on email send message with the error message
+      />
+      <Textbox 
+      placeholder='enter your password'
+      type='password'
+      name='password'
+      label= 'password'
+      className='w-full rounded-full'
+      register={register('password', {
+      required:'email address is required'
+      })}
+      error={errors.email ? errors.email.message : ""} //if error exist on email send message with the error message
+      />
+
+      <span className='text sm text-grey-500 hover:text-teal-600 hover:underline cursor-pointer'>
+        Forget Password? 
+      </span>
+
+      <Button
+      type='submit'
+      label='submit'
+      className='w-full h-10 bg-teal-700 rounded-full hover:text-red-300 hover:underline cursor-pointer'/>
+    </div>
+       </form>
+       </div>
       </div>
-    </div>
-    </div>
     </div>
   )
 }
