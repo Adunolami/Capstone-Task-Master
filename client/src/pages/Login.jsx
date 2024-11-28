@@ -3,7 +3,12 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import Textbox from '../components/Textbox';
 import Button from '../components/Button';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLoginMutation } from '../redux/slices/api/authApiSlice';
+import { toast } from 'sonner';
+import { setCredentials } from '../redux/slices/authSlice';
+import Loading from '../components/Loader';
+
 
 const Login = () => {
   const {user} = useSelector((state) => state.auth);
@@ -14,15 +19,32 @@ const Login = () => {
   } = useForm();
 
 
-  const navigate = useNavigate();
+   const navigate = useNavigate();
+   const dispatch = useDispatch();
+
+
+  const [login, { isLoading }] = useLoginMutation();
 
   const submitHandler = async (data) => {
-    console.log("submit")
+    try {
+      const result = await login(data).unwrap();
+
+      dispatch(setCredentials(result))
+      navigate('/');
+
+
+    } catch(error) {
+      console.log(error);
+      toast.error(error?.data?.message || error.message);
+    }
+    
   };
 
   useEffect(() => {
-    user && navigate('/dashboard')  //if user exist we navigate to dashboard
-  }, [user]);   //when ever user changes its going to be fired again
+    if (user) {
+      navigate('/dashboard');  // Redirect to dashboard if user exists
+    }
+  }, [user, navigate]);  //when ever user changes its going to be fired again
 
   return (
     <div className='w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-#f3f4f6'>
@@ -35,7 +57,7 @@ const Login = () => {
           Manage All Your Task In One Place 
         </span>
         <p className='flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-teal-900'>
-          <span>Cloud-Based</span>
+          <span>Capstone-Project </span>
           <span>Task-Manager</span>
         </p>
         
@@ -47,7 +69,7 @@ const Login = () => {
        <div className="w-full md:w-1/3 lg:w-1/2 p-4 md:p-1 flex flex-col justify-center items-center">
        <form 
        onSubmit={handleSubmit(submitHandler)}
-       className='form-container w-full md:w-[300px} flex flex-col gap-4 bg-white px-10 pt-14 pb-14'
+       className='form-container w-full md:w-[300px] flex flex-col gap-4 bg-white px-10 pt-14 pb-14'
        >
     <div className=''>
       <p className='text-teal-800 text-3xl font-bold text-center'>
@@ -79,17 +101,22 @@ const Login = () => {
       register={register('password', {
       required:'email address is required'
       })}
-      error={errors.email ? errors.email.message : ""} //if error exist on email send message with the error message
+      error={errors.password ? errors.email.message : ""} //if error exist on email send message with the error message
       />
 
       <span className='text sm text-grey-500 hover:text-teal-600 hover:underline cursor-pointer'>
         Forget Password? 
       </span>
 
+      {isLoading ? (
+        <Loading /> 
+      ): (
       <Button
       type='submit'
       label='submit'
-      className='w-full h-10 bg-teal-700 rounded-full hover:text-red-300 hover:underline cursor-pointer'/>
+      className='w-full h-10 bg-teal-700 rounded-full hover:text-red-300 hover:underline cursor-pointer'
+      />
+      )}
     </div>
        </form>
        </div>

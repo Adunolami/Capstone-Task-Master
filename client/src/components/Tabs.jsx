@@ -11,7 +11,7 @@ export default function Tabs({ tabs, setSelected, children }) {
         <Tab.List className='flex space-x-6 rounded-xl p-1'>
           {tabs.map((tab, index) => (
             <Tab
-              key={tab.title}
+              key={index + tab.title}
               onClick={() => setSelected(index)}
               className={({ selected }) =>
                 classNames(
@@ -28,7 +28,7 @@ export default function Tabs({ tabs, setSelected, children }) {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className='w-full mt-2'>{children}</Tab.Panels>
+        <Tab.Panel className='w-full mt-2'>{children}</Tab.Panel>
       </Tab.Group>
     </div>
   );
