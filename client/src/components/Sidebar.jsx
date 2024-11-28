@@ -29,8 +29,8 @@ const linkData = [
     icon: <MdTaskAlt />,
   },
   {
-    label: "In Progress",
-    link: "in-progress/in progress",
+    label: "In-Progress",
+    link: "in-progress/in-progress",
     icon: <MdOutlinePendingActions />,
   },
   {

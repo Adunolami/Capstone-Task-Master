@@ -71,7 +71,7 @@ const TASKTYPEICON = {
       <MdOutlineDoneAll size={24} />
     </div>
   ),
-  "in progress": (
+  "in-progress": (
     <div className='w-8 h-8 flex items-center justify-center rounded-full bg-violet-600 text-white'>
       <GrInProgress size={16} />
     </div>
@@ -81,7 +81,7 @@ const TASKTYPEICON = {
 const act_types = [
   "Started",
   "Completed",
-  "In Progress",
+  "In-Progress",
   "Commented",
   "Bug",
   "Assigned",
