@@ -6,10 +6,10 @@ import { HiDuplicate } from "react-icons/hi";
 import { MdAdd, MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Menu, Transition } from "@headlessui/react";
-import AddTask from "./AddTask";
-import AddSubTask from "./AddSubTask";
-import ConfirmatioDialog from "../Dialogs";
-import { useDuplicateTaskMutation, useTrashTastMutation } from "../../redux/slices/api/taskApiSlice";
+import AddTask from "./AddTask.jsx";
+import AddSubTask from "./AddSubTask.jsx";
+import ConfirmatioDialog from "../Dialogs.jsx";
+import { useDuplicateTaskMutation, useTrashTastMutation } from "../../redux/slices/api/taskApiSlice.js";
 import { toast } from "sonner";
 
 const TaskDialog = ({ task }) => {

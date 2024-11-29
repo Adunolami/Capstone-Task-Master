@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import ModalWrapper from "../ModalWrapper";
+import ModalWrapper from "../ModalWrapper.jsx";
 import { Dialog } from "@headlessui/react";
-import Textbox from "../Textbox";
+import Textbox from "../Textbox.jsx";
 import { useForm } from "react-hook-form";
-import UserList from "./UserList";
-import SelectList from "../SelectList";
+import UserList from "./UserList.jsx";
+import SelectList from "../SelectList.jsx";
 import { BiImages } from "react-icons/bi";
-import Button from "../Button";
+import Button from "../Button.jsx";
 import {
   getStorage,
   ref,
@@ -17,7 +17,7 @@ import { app } from "../../utils/firebase";
 import {
   useCreateTaskMutation,
   useUpdateTaskMutation,
-} from "../../redux/slices/api/taskApiSlice";
+} from "../../redux/slices/api/taskApiSlice.js";
 import { toast } from "sonner";
 import { dateFormatter } from "../../utils";
 const LISTS = ["TODO", "IN PROGRESS", "COMPLETED"];

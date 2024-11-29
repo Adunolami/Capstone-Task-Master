@@ -1,11 +1,11 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { useForm } from 'react-hook-form';
-import Button from './Button';
-//import Loading from './Loader';
-import ModalWrapper from './ModalWrapper';
-import Textbox from './Textbox';
-import { useChangePasswordMutation } from '../redux/slices/api/userApiSlice'; // Uncommented
+import Button from './Button.jsx';
+import Loading from './Loader.jsx';
+import ModalWrapper from './ModalWrapper.jsx';
+import Textbox from './Textbox.jsx';
+import { useChangePasswordMutation } from '../redux/slices/api/userApiSlice.js'; // Uncommented
 import { toast } from 'sonner';
 
 const ChangePassword = ({ open, setOpen }) => {

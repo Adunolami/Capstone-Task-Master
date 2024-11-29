@@ -5,7 +5,7 @@ import { summary } from "../../assets/data";
 import clsx from "clsx";
 import { getInitials } from "../../utils";
 import { MdCheck } from "react-icons/md";
-import { useGetTeamListQuery } from "../../redux/slices/api/userApiSlice";
+import { useGetTeamListQuery } from "../../redux/slices/api/userApiSlice.js";
 
 
 const UserList = ({ setTeam, team }) => {

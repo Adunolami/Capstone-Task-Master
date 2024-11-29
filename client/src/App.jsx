@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Routes, Route , useLocation, Navigate, Outlet } from 'react-router-dom'
 import { Toaster } from 'sonner'
 import { IoClose } from "react-icons/io5";
-import Dashboard from './pages/Dashboard';
-import TaskDetails from './pages/TaskDetail';
-import Tasks from './pages/Tasks';
-import Trash from './pages/Trash';
-import Users from './pages/Users';
-import Login from './pages/Login';
-import Sidebar from './components/sidebar';
-import Navbar from './components/Navbar';
-import { setOpenSidebar } from "./redux/slices/authSlice";
+import Dashboard from './pages/dashboard.jsx';
+import TaskDetails from './pages/TaskDetail.jsx';
+import Tasks from './pages/Tasks.jsx';
+import Trash from './pages/Trash.jsx';
+import Users from './pages/Users.jsx';
+import Login from './pages/Login.jsx';
+import Sidebar from './components/Sidebar.jsx';
+import Navbar from './components/Navbar.jsx';
+import { setOpenSidebar } from "./redux/slices/authSlice.js";
 //import { IoMdClose } from 'react-icons'
 
 

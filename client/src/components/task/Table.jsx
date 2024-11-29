@@ -10,11 +10,11 @@ import { toast } from "sonner";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, formatDate } from "../../utils";
 import clsx from "clsx";
 import { FaList } from "react-icons/fa";
-import UserInfo from "../UserInfo";
-import Button from "../Button";
+import UserInfo from "../UserInfo.jsx";
+import Button from "../Button.jsx";
 import ConfirmatioDialog from "../Dialogs";
-import { useTrashTastMutation } from "../../redux/slices/api/taskApiSlice";
-import AddTask from './AddTask'
+import { useTrashTastMutation } from "../../redux/slices/api/taskApiSlice.js";
+import AddTask from './AddTask.jsx'
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,

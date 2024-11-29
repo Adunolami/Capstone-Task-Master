@@ -5,8 +5,8 @@ import { BiSolidMessageRounded } from "react-icons/bi";
 import { HiBellAlert } from "react-icons/hi2";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
-import ViewNotification from './ViewNotification'
-import { useMarkNotiAsReadMutation, useGetNotificationsQuery } from "../redux/slices/api/userApiSlice";
+import ViewNotification from './ViewNotification.jsx'
+import { useMarkNotiAsReadMutation, useGetNotificationsQuery } from "../redux/slices/api/userApiSlice.js";
 
 
 const data = [

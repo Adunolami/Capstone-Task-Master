@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { MdGridView } from "react-icons/md";
 import { useParams } from "react-router-dom";
-import Loading from "../components/Loader";
-import Title from "../components/Title";
-import Button from "../components/Button";
+import Loading from "../components/Loader.jsx";
+import Title from "../components/Title.jsx";
+import Button from "../components/Button.jsx";
 import { IoMdAdd } from "react-icons/io";
-import Tabs from "../components/Tabs";
-import TaskTitle from "../components/TaskTitle";
-import BoardView from "../components/BoardView";
+import Tabs from "../components/Tabs.jsx";
+import TaskTitle from "../components/TasKTitle.jsx";
+import BoardView from "../components/BoardView.jsx";
 import { tasks } from "../assets/data";
-import Table from "../components/task/Table";
-import AddTask from "../components/task/AddTask";
-import { useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice";
+import Table from "../components/task/Table.jsx";
+import AddTask from "../components/task/AddTask.jsx";
+import { useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice.js";
 
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },

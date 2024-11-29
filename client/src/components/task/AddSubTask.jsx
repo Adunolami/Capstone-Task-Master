@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import ModalWrapper from "../ModalWrapper";
 import { Dialog } from "@headlessui/react";
-import Textbox from "../Textbox";
-import Button from "../Button";
+import Textbox from "../Textbox.jsx";
+import Button from "../Button.jsx";
 import { toast } from "sonner";
-import { useCreateSubTaskMutation } from "../../redux/slices/api/taskApiSlice";
+import { useCreateSubTaskMutation } from "../../redux/slices/api/taskApiSlice.js";
 
 const AddSubTask = ({ open, setOpen, id }) => {
   const {

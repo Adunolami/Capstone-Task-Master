@@ -1,7 +1,7 @@
 import React from 'react';
-import ModalWrapper from './ModalWrapper';
+import ModalWrapper from './ModalWrapper.jsx';
 import { Dialog } from '@headlessui/react';
-import Button from './Button';
+import Button from './Button.jsx';
 
 const ViewNotification = ({ open, setOpen, el }) => {
   return (

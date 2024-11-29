@@ -8,13 +8,13 @@ import {
   MdOutlineRestore,
 } from "react-icons/md";
 import { tasks } from "../assets/data";
-import Title from "../components/Title";
-import Button from "../components/Button";
+import Title from "../components/Title.jsx";
+import Button from "../components/Button.jsx";
 import { PRIOTITYSTYELS, TASK_TYPE } from "../utils";
 import AddUser from "../components/AddUser";
-import ConfirmatioDialog from "../components/Dialogs";
-import { useDeleteRestoreTastMutation, useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice";
-import Loading from '../components/Loader'
+import ConfirmatioDialog from "../components/Dialogs.jsx";
+import { useDeleteRestoreTastMutation, useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice.js";
+import Loading from '../components/Loader.jsx'
 import { toast } from "sonner";
 
 const ICONS = {
